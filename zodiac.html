@@ -1,287 +1,167 @@
-<!-- ===== 牡羊座 ===== -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
 
-<div
-class="zodiac-card"
-onclick="location.href='Aries.html'">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<img src="Aries.png">
+<title>黃道十二宮 AR展示學習</title>
 
-<h2>牡羊座</h2>
+<style>
+*{
+  box-sizing:border-box;
+}
 
-<h3>Aries</h3>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+  font-family:"Microsoft JhengHei",sans-serif;
+}
 
-<div class="info">
+/* 背景動畫 */
+#bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
 
-日期：3/21～4/19<br>
+/* 頁面 */
+body{
+  padding:24px;
+}
 
-個性：熱情、勇敢、衝動<br>
+/* 大標題 */
+.main-title{
+  text-align:center;
+  color:white;
+  font-size:48px;
+  font-weight:bold;
+  margin:20px 0 40px;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 25px #8b5cf6,
+    0 0 45px #60a5fa;
+  letter-spacing:4px;
+}
 
-象系：火象星座
+/* 星座圖片排列 */
+.zodiac-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* 圖片按鈕 */
+.zodiac-btn{
+  border:none;
+  background:rgba(255,255,255,0.18);
+  border-radius:24px;
+  padding:12px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 20px rgba(255,255,255,0.18);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.zodiac-btn:hover{
+  transform:scale(1.05);
+}
+
+/* 星座圖片 */
+.zodiac-btn img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+}
+
+/* 手機版 */
+@media(max-width:768px){
+  body{
+    padding:16px;
+  }
+
+  .main-title{
+    font-size:32px;
+    margin-bottom:28px;
+  }
+
+  .zodiac-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<h1 class="main-title">黃道十二宮 AR展示學習</h1>
+
+<div class="zodiac-grid">
+
+  <button class="zodiac-btn" onclick="location.href='Aries.html'">
+    <img src="Aries.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Taurus.html'">
+    <img src="Taurus.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Gemini.html'">
+    <img src="Gemini.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Cancer.html'">
+    <img src="Cancer.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Leo.html'">
+    <img src="Leo.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Virgo.html'">
+    <img src="Virgo.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Libra.html'">
+    <img src="Libra.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Scorpio.html'">
+    <img src="Scorpio.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Sagittarius.html'">
+    <img src="Sagittarius.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Capricorn.html'">
+    <img src="Capricorn.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Aquarius.html'">
+    <img src="Aquarius.png">
+  </button>
+
+  <button class="zodiac-btn" onclick="location.href='Pisces.html'">
+    <img src="Pisces.png">
+  </button>
 
 </div>
 
-</div>
-
-<!-- ===== 金牛座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Taurus.html'">
-
-<img src="Taurus.png">
-
-<h2>金牛座</h2>
-
-<h3>Taurus</h3>
-
-<div class="info">
-
-日期：4/20～5/20<br>
-
-個性：穩重、固執、踏實<br>
-
-象系：土象星座
-
-</div>
-
-</div>
-
-<!-- ===== 雙子座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Gemini.html'">
-
-<img src="Gemini.png">
-
-<h2>雙子座</h2>
-
-<h3>Gemini</h3>
-
-<div class="info">
-
-日期：5/21～6/21<br>
-
-個性：活潑、好奇、多變<br>
-
-象系：風象星座
-
-</div>
-
-</div>
-
-<!-- ===== 巨蟹座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Cancer.html'">
-
-<img src="Cancer.png">
-
-<h2>巨蟹座</h2>
-
-<h3>Cancer</h3>
-
-<div class="info">
-
-日期：6/22～7/22<br>
-
-個性：溫柔、敏感、重感情<br>
-
-象系：水象星座
-
-</div>
-
-</div>
-
-<!-- ===== 獅子座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Leo.html'">
-
-<img src="Leo.png">
-
-<h2>獅子座</h2>
-
-<h3>Leo</h3>
-
-<div class="info">
-
-日期：7/23～8/22<br>
-
-個性：自信、霸氣、領導力強<br>
-
-象系：火象星座
-
-</div>
-
-</div>
-
-<!-- ===== 處女座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Virgo.html'">
-
-<img src="Virgo.png">
-
-<h2>處女座</h2>
-
-<h3>Virgo</h3>
-
-<div class="info">
-
-日期：8/23～9/22<br>
-
-個性：細心、理性、追求完美<br>
-
-象系：土象星座
-
-</div>
-
-</div>
-
-<!-- ===== 天秤座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Libra.html'">
-
-<img src="Libra.png">
-
-<h2>天秤座</h2>
-
-<h3>Libra</h3>
-
-<div class="info">
-
-日期：9/23～10/22<br>
-
-個性：優雅、公平、愛和平<br>
-
-象系：風象星座
-
-</div>
-
-</div>
-
-<!-- ===== 天蠍座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Scorpio.html'">
-
-<img src="Scorpio.png">
-
-<h2>天蠍座</h2>
-
-<h3>Scorpio</h3>
-
-<div class="info">
-
-日期：10/23～11/21<br>
-
-個性：神秘、執著、洞察力強<br>
-
-象系：水象星座
-
-</div>
-
-</div>
-
-<!-- ===== 射手座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Sagittarius.html'">
-
-<img src="Sagittarius.png">
-
-<h2>射手座</h2>
-
-<h3>Sagittarius</h3>
-
-<div class="info">
-
-日期：11/22～12/21<br>
-
-個性：自由、樂觀、愛冒險<br>
-
-象系：火象星座
-
-</div>
-
-</div>
-
-<!-- ===== 摩羯座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Capricorn.html'">
-
-<img src="Capricorn.png">
-
-<h2>摩羯座</h2>
-
-<h3>Capricorn</h3>
-
-<div class="info">
-
-日期：12/22～1/19<br>
-
-個性：努力、沉穩、有責任感<br>
-
-象系：土象星座
-
-</div>
-
-</div>
-
-<!-- ===== 水瓶座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Aquarius.html'">
-
-<img src="Aquarius.png">
-
-<h2>水瓶座</h2>
-
-<h3>Aquarius</h3>
-
-<div class="info">
-
-日期：1/20～2/18<br>
-
-個性：創意、獨立、自由<br>
-
-象系：風象星座
-
-</div>
-
-</div>
-
-<!-- ===== 雙魚座 ===== -->
-
-<div
-class="zodiac-card"
-onclick="location.href='Pisces.html'">
-
-<img src="Pisces.png">
-
-<h2>雙魚座</h2>
-
-<h3>Pisces</h3>
-
-<div class="info">
-
-日期：2/19～3/20<br>
-
-個性：浪漫、感性、富想像力<br>
-
-象系：水象星座
-
-</div>
-
-</div>
+</body>
+</html>
