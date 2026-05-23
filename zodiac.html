@@ -2,178 +2,311 @@
 <html lang="zh-Hant">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>黃道十二宮
-  AR展示學習</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+黃道十二宮
+AR展示學習
+</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
+
   margin:0;
   padding:0;
+
   width:100%;
   min-height:100%;
-  font-family:"Microsoft JhengHei",sans-serif;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
 }
 
-/* 背景動畫 */
+/* ===== 背景影片 ===== */
+
 #bg-video{
+
   position:fixed;
+
   top:0;
   left:0;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
+
   z-index:-1;
 }
 
-/* 頁面 */
+/* ===== 頁面 ===== */
+
 body{
+
   padding:24px;
 }
 
-/* 大標題 */
+/* ===== 大標題 ===== */
+
 .main-title{
+
   text-align:center;
+
   color:white;
+
   font-size:48px;
+
   font-weight:bold;
+
   margin:20px 0 40px;
+
   text-shadow:
     0 0 10px #fff,
     0 0 25px #8b5cf6,
     0 0 45px #60a5fa;
-  letter-spacing:4px;
 }
 
-/* 星座圖片排列 */
+/* ===== 星座排列 ===== */
+
 .zodiac-grid{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+  repeat(4,1fr);
+
   gap:24px;
-  max-width:1100px;
-  margin:0 auto;
+
+  max-width:1200px;
+
+  margin:auto;
 }
 
-/* 圖片按鈕 */
+/* ===== 星座按鈕 ===== */
+
 .zodiac-btn{
+
   border:none;
-  background:rgba(255,255,255,0.18);
+
+  background:
+  rgba(255,255,255,0.15);
+
   border-radius:24px;
+
   padding:12px;
+
   backdrop-filter:blur(8px);
-  box-shadow:0 0 20px rgba(255,255,255,0.18);
+
   cursor:pointer;
+
   transition:0.3s;
 }
 
 .zodiac-btn:hover{
+
   transform:scale(1.05);
 }
 
-/* 星座圖片 */
+/* ===== 星座圖片 ===== */
+
 .zodiac-btn img{
+
   width:100%;
+
   aspect-ratio:1/1;
+
   object-fit:cover;
+
   border-radius:18px;
-  display:block;
 }
 
-/* 手機版 */
+/* ===== 手機版 ===== */
+
 @media(max-width:768px){
+
   body{
     padding:16px;
   }
 
   .main-title{
     font-size:32px;
-    margin-bottom:28px;
   }
 
   .zodiac-grid{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:16px;
   }
 }
+
 </style>
+
 </head>
 
 <body>
 
-<video id="bg-video" autoplay muted loop playsinline>
-  <source src="background.mp4" type="video/mp4">
+<!-- ===== 背景影片 ===== -->
+
+<video
+id="bg-video"
+autoplay
+muted
+loop
+playsinline>
+
+<source
+src="background.mp4"
+type="video/mp4">
+
 </video>
 
-<h1 class="main-title">黃道十二宮 AR展示學習</h1>
+<!-- ===== 標題 ===== -->
+
+<h1 class="main-title">
+
+黃道十二宮 AR展示學習
+
+</h1>
+
+<!-- ===== 星座按鈕 ===== -->
 
 <div class="zodiac-grid">
 
- <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Aries.png">
-  </button>
+<!-- 牡羊座 -->
 
-  <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Taurus.png">
-  </button>
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
 
-  <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Gemini.png">
-  </button>
+<img src="Aries.png">
 
- <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Cancer.png">
-  </button>
+</button>
 
-  <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Leo.png">
-  </button>
+<!-- 金牛座 -->
 
-  <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Virgo.png">
-  </button>
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
 
-  <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Libra.png">
-  </button>
+<img src="Taurus.png">
 
-   <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Scorpio.png">
-  </button>
+</button>
 
-   <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Sagittarius.png">
-  </button>
+<!-- 雙子座 -->
 
- <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Capricorn.png">
-  </button>
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
 
- <button class="zodiac-btn"
+<img src="Gemini.png">
+
+</button>
+
+<!-- 巨蟹座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Cancer.png">
+
+</button>
+
+<!-- 獅子座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Leo.png">
+
+</button>
+
+<!-- 處女座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Virgo.png">
+
+</button>
+
+<!-- 天秤座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Libra.png">
+
+</button>
+
+<!-- 天蠍座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Scorpio.png">
+
+</button>
+
+<!-- 射手座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Sagittarius.png">
+
+</button>
+
+<!-- 摩羯座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Capricorn.png">
+
+</button>
+
+<!-- 水瓶座 -->
+
+<button
+class="zodiac-btn"
 onclick="window.location.href='https://yii-stu.github.io/home519/test10.html'">
+
 <img src="Aquarius.png">
 
- <button class="zodiac-btn"
-onclick="window.location.href=">
-    <img src="Pisces.png">
-  </button>
+</button>
+
+<!-- 雙魚座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='#'">
+
+<img src="Pisces.png">
+
+</button>
 
 </div>
 
 </body>
+
 </html>
