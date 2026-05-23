@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
+
+<title>十二星座故事</title>
+
+<style>
+
+/* ===== 動畫影片背景 ===== */
+
+#bg-video{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:-1;
+}
+
+/* ===== body ===== */
+
+body{
+
+  margin:0;
+
+  padding:20px;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+}
+
+/* ===== 主標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  color:white;
+
+  font-size:40px;
+
+  text-shadow:
+  0 0 15px black;
+
+  margin-bottom:25px;
+}
+
+/* ===== 四象標題 ===== */
+
+.element-title{
+
+  margin-top:35px;
+
+  margin-bottom:15px;
+
+  font-size:28px;
+
+  font-weight:bold;
+
+  text-shadow:
+  0 0 10px white;
+}
+
+/* ===== 四象顏色 ===== */
+
+.air{
+  color:#7dd3fc;
+}
+
+.earth{
+  color:#c08457;
+}
+
+.fire{
+  color:#ff7849;
+}
+
+.water{
+  color:#60a5fa;
+}
+
+/* ===== 星座排列 ===== */
+
+.zodiac-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:15px;
+}
+
+/* ===== 星座按鈕 ===== */
+
+.zodiac-btn{
+
+  border:none;
+
+  background:
+  rgba(255,255,255,0.88);
+
+  border-radius:22px;
+
+  padding:12px;
+
+  backdrop-filter:blur(6px);
+
+  box-shadow:
+  0 0 20px
+  rgba(255,255,255,0.15);
+}
+
+/* ===== 星座圖片 ===== */
+
+.zodiac-btn img{
+
+  width:100%;
+
+  border-radius:16px;
+}
+
+/* ===== 中文 ===== */
+
+.zodiac-btn h3{
+
+  margin:10px 0 0;
+
+  color:#5b35c8;
+
+  font-size:20px;
+}
+
+/* ===== 英文 ===== */
+
+.zodiac-btn p{
+
+  margin:5px 0 0;
+
+  color:#666;
+
+  font-size:16px;
+}
+
+/* ===== 故事頁 ===== */
+
+#story-page{
+
+  display:none;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  background:
+  rgba(255,255,255,0.92);
+
+  border:4px solid #8b5cf6;
+
+  border-radius:24px;
+
+  padding:24px;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 0 18px
+  rgba(139,92,246,0.35);
+}
+
+/* ===== 故事圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:18px;
+
+  margin-bottom:18px;
+}
+
+/* ===== 標題 ===== */
+
+.card h2{
+
+  text-align:center;
+
+  color:#5b35c8;
+}
+
+/* ===== 類型 ===== */
+
+.card h3{
+
+  color:#7c3aed;
+}
+
+/* ===== 內文 ===== */
+
+.card p{
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:#222;
+}
+
+/* ===== 按鈕區 ===== */
+
+.buttons{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.action-btn{
+
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:50px;
+
+  font-size:20px;
+
+  font-weight:bold;
+}
+
+/* ===== 按鈕顏色 ===== */
+
+.read-btn{
+
+  background:#79a9ff;
+
+  color:white;
+}
+
+.back-btn{
+
+  background:#8b5cf6;
+
+  color:white;
+}
+
+.ar-btn{
+
+  background:#222;
+
+  color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ===== 動畫影片背景 ===== -->
+
+<video
+id="bg-video"
+autoplay
+muted
+loop
+playsinline>
+
+<source
+src="background.mp4"
+type="video/mp4">
+
+</video>
+
+<!-- ===== 首頁 ===== -->
+
+<div id="home-page">
+
+<h1>
+
+十二星座故事
+
+</h1>
+
+<!-- ===== 風象 ===== -->
+
+<div class="element-title air">
+風象星座
+</div>
+
+<div class="zodiac-grid">
+
+<button
+class="zodiac-btn"
+onclick="showStory('aquarius')">
+
+<img src="Aquarius.png">
+
+<h3>水瓶座</h3>
+
+<p>Aquarius</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('gemini')">
+
+<img src="Gemini.png">
+
+<h3>雙子座</h3>
+
+<p>Gemini</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('libra')">
+
+<img src="Libra.png">
+
+<h3>天秤座</h3>
+
+<p>Libra</p>
+
+</button>
+
+</div>
+
+<!-- ===== 土象 ===== -->
+
+<div class="element-title earth">
+土象星座
+</div>
+
+<div class="zodiac-grid">
+
+<button
+class="zodiac-btn"
+onclick="showStory('taurus')">
+
+<img src="Taurus.png">
+
+<h3>金牛座</h3>
+
+<p>Taurus</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('virgo')">
+
+<img src="Virgo.png">
+
+<h3>處女座</h3>
+
+<p>Virgo</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('capricorn')">
+
+<img src="Capricorn.png">
+
+<h3>摩羯座</h3>
+
+<p>Capricorn</p>
+
+</button>
+
+</div>
+
+<!-- ===== 火象 ===== -->
+
+<div class="element-title fire">
+火象星座
+</div>
+
+<div class="zodiac-grid">
+
+<button
+class="zodiac-btn"
+onclick="showStory('aries')">
+
+<img src="Aries.png">
+
+<h3>牡羊座</h3>
+
+<p>Aries</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('leo')">
+
+<img src="Leo.png">
+
+<h3>獅子座</h3>
+
+<p>Leo</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('sagittarius')">
+
+<img src="Sagittarius.png">
+
+<h3>射手座</h3>
+
+<p>Sagittarius</p>
+
+</button>
+
+</div>
+
+<!-- ===== 水象 ===== -->
+
+<div class="element-title water">
+水象星座
+</div>
+
+<div class="zodiac-grid">
+
+<button
+class="zodiac-btn"
+onclick="showStory('cancer')">
+
+<img src="Cancer.png">
+
+<h3>巨蟹座</h3>
+
+<p>Cancer</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('scorpio')">
+
+<img src="Scorpio.png">
+
+<h3>天蠍座</h3>
+
+<p>Scorpio</p>
+
+</button>
+
+<button
+class="zodiac-btn"
+onclick="showStory('pisces')">
+
+<img src="Pisces.png">
+
+<h3>雙魚座</h3>
+
+<p>Pisces</p>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 故事頁 ===== -->
+
+<div id="story-page">
+
+<div class="card">
+
+<img id="story-img">
+
+<h2 id="story-title"></h2>
+
+<h3 id="story-type"></h3>
+
+<p id="story-text"></p>
+
+<div class="buttons">
+
+<button
+class="action-btn read-btn"
+onclick="playAudio()">
+
+朗讀故事
+
+</button>
+
+<button
+class="action-btn back-btn"
+onclick="backToHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="action-btn ar-btn"
+onclick="backToAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔播放器 ===== -->
+
+<audio id="audio-player"></audio>
+
+<script>
+
+/* ===== 星座資料 ===== */
+
+const zodiacData = {
+
+aquarius:{
+
+title:
+"水瓶座 Aquarius（1/20~2/18）",
+
+type:
+"風象星座｜希臘神話起源",
+
+img:
+"Aquarius.png",
+
+audio:
+"Aquarius.m4a",
+
+text:
+"形像是一個持著瓶子在斟酒的美少年蓋尼米德，據說他是特洛伊的王子。有一天，他替父親看羊時，宙斯在天空經過，一見蓋尼米德即對他迷戀，變身成一隻老鷹擄走蓋尼米德到奧林匹斯山，而蓋尼米德從此成為宙斯身旁的倒酒僮。"
+
+}
+
+};
+
+/* ===== 目前音檔 ===== */
+
+let currentAudio = "";
+
+/* ===== 顯示故事 ===== */
+
+function showStory(id){
+
+const zodiac =
+zodiacData[id];
+
+currentAudio =
+zodiac.audio;
+
+document.getElementById(
+"home-page"
+).style.display = "none";
+
+document.getElementById(
+"story-page"
+).style.display = "block";
+
+document.getElementById(
+"story-img"
+).src =
+zodiac.img;
+
+document.getElementById(
+"story-title"
+).innerText =
+zodiac.title;
+
+document.getElementById(
+"story-type"
+).innerText =
+zodiac.type;
+
+document.getElementById(
+"story-text"
+).innerText =
+zodiac.text;
+
+window.scrollTo(0,0);
+
+}
+
+/* ===== 播放錄音 ===== */
+
+function playAudio(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+if(currentAudio){
+
+audio.src =
+currentAudio;
+
+audio.play();
+
+}
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backToHome(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+document.getElementById(
+"story-page"
+).style.display = "none";
+
+document.getElementById(
+"home-page"
+).style.display = "block";
+
+}
+
+/* ===== 返回AR ===== */
+
+function backToAR(){
+
+window.location.href =
+"index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
