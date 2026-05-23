@@ -27,11 +27,11 @@ body{
   width:100%;
   min-height:100%;
 
+  overflow-x:hidden;
+
   font-family:
   "Microsoft JhengHei",
   sans-serif;
-
-  overflow-x:hidden;
 }
 
 /* ===== 背景影片 ===== */
@@ -55,10 +55,10 @@ body{
 
 body{
 
-  padding:24px;
+  padding:25px;
 }
 
-/* ===== 大標題 ===== */
+/* ===== 標題 ===== */
 
 .main-title{
 
@@ -72,17 +72,17 @@ body{
 
   line-height:1.4;
 
-  margin:25px 0 45px;
+  margin:20px 0 40px;
+
+  letter-spacing:4px;
 
   text-shadow:
     0 0 10px #fff,
-    0 0 25px #8b5cf6,
-    0 0 45px #60a5fa;
-
-  letter-spacing:4px;
+    0 0 20px #8b5cf6,
+    0 0 40px #60a5fa;
 }
 
-/* ===== 強制分兩行 ===== */
+/* ===== 強制換行 ===== */
 
 .main-title span{
 
@@ -98,61 +98,44 @@ body{
   grid-template-columns:
   repeat(4,1fr);
 
-  gap:24px;
+  gap:20px;
 
   max-width:1200px;
 
   margin:auto;
 }
 
-/* ===== 星座按鈕 ===== */
+/* ===== 圖片按鈕 ===== */
 
 .zodiac-btn{
 
   border:none;
 
-  background:
-  rgba(255,255,255,0.15);
+  background:none;
 
-  border-radius:24px;
-
-  padding:12px;
-
-  backdrop-filter:blur(8px);
-
-  box-shadow:
-  0 0 20px
-  rgba(255,255,255,0.18);
+  padding:0;
 
   cursor:pointer;
-
-  transition:0.3s;
 }
 
-/* ===== 滑鼠效果 ===== */
-
-.zodiac-btn:hover{
-
-  transform:scale(1.05);
-
-  box-shadow:
-  0 0 30px
-  rgba(255,255,255,0.35);
-}
-
-/* ===== 星座圖片 ===== */
+/* ===== 圖片 ===== */
 
 .zodiac-btn img{
 
   width:100%;
 
-  aspect-ratio:1/1;
-
-  object-fit:cover;
-
-  border-radius:18px;
-
   display:block;
+
+  border-radius:20px;
+
+  transition:0.3s;
+}
+
+/* ===== 圖片動畫 ===== */
+
+.zodiac-btn img:hover{
+
+  transform:scale(1.05);
 }
 
 /* ===== 手機版 ===== */
@@ -167,9 +150,7 @@ body{
 
     font-size:34px;
 
-    line-height:1.35;
-
-    margin-bottom:30px;
+    margin-bottom:28px;
   }
 
   .zodiac-grid{
@@ -212,7 +193,7 @@ type="video/mp4">
 
 </h1>
 
-<!-- ===== 星座按鈕 ===== -->
+<!-- ===== 星座圖片 ===== -->
 
 <div class="zodiac-grid">
 
