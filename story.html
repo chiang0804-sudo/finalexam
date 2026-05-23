@@ -9,22 +9,37 @@
 content="width=device-width,
 initial-scale=1.0">
 
-<title>星座故事</title>
+<title>
+
+水瓶座故事
+
+</title>
 
 <style>
 
+html,
 body{
 
   margin:0;
-
-  padding:20px;
-
-  background:#f4f0ff;
+  padding:0;
 
   font-family:
   "Microsoft JhengHei",
   sans-serif;
+
+  background:#0f172a;
+
+  color:white;
 }
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
 
 .card{
 
@@ -32,79 +47,83 @@ body{
 
   margin:auto;
 
-  background:white;
+  background:
+  rgba(255,255,255,0.1);
 
-  border-radius:24px;
+  border-radius:25px;
 
-  padding:24px;
+  padding:25px;
 
-  box-shadow:
-  0 0 18px
-  rgba(139,92,246,0.3);
+  backdrop-filter:blur(10px);
 }
 
-img{
+/* ===== 圖片 ===== */
+
+.card img{
 
   width:100%;
-
-  max-height:400px;
-
-  object-fit:cover;
 
   border-radius:20px;
 }
 
+/* ===== 標題 ===== */
+
 h1{
 
-  color:#5b35c8;
-
   text-align:center;
+
+  font-size:36px;
 }
 
-h2{
+/* ===== 內文 ===== */
 
-  color:#7c3aed;
-}
+.story{
 
-p{
-
-  font-size:22px;
+  font-size:20px;
 
   line-height:2;
 
-  color:#222;
+  margin-top:20px;
 }
 
 /* ===== 按鈕 ===== */
 
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
 button{
-
-  width:100%;
-
-  padding:16px;
-
-  margin-top:12px;
 
   border:none;
 
   border-radius:50px;
 
-  font-size:20px;
+  padding:16px;
 
-  font-weight:bold;
+  font-size:20px;
 
   color:white;
 }
 
 .read-btn{
-  background:#79a9ff;
+
+  background:#60a5fa;
 }
 
-.back-btn{
+.home-btn{
+
   background:#8b5cf6;
 }
 
 .ar-btn{
+
   background:#222;
 }
 
@@ -116,13 +135,24 @@ button{
 
 <div class="card">
 
-<img id="zodiac-img">
+<img src="Aquarius.png">
 
-<h1 id="zodiac-title"></h1>
+<h1>
 
-<h2 id="zodiac-type"></h2>
+水瓶座 Aquarius
+（1/20~2/18）
 
-<p id="zodiac-story"></p>
+</h1>
+
+<div class="story">
+
+風象星座｜希臘神話起源<br><br>
+
+形像是一個持著瓶子在斟酒的美少年蓋尼米德，據說他是特洛伊的王子。有一天，他替父親看羊時，宙斯在天空經過，一見蓋尼米德即對他迷戀，變身成一隻老鷹擄走蓋尼米德到奧林匹斯山，而蓋尼米德從此成為宙斯身旁的倒酒僮。
+
+</div>
+
+<div class="buttons">
 
 <button
 class="read-btn"
@@ -133,7 +163,7 @@ onclick="playStory()">
 </button>
 
 <button
-class="back-btn"
+class="home-btn"
 onclick="backHome()">
 
 返回12星座
@@ -150,113 +180,34 @@ onclick="goAR()">
 
 </div>
 
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Aquarius.m4a"
+type="audio/mp4">
+
+</audio>
+
 <script>
 
-/* ===== 星座資料 ===== */
-
-const zodiacData = {
-
-aquarius:{
-
-title:"水瓶座 Aquarius（1/20~2/18）",
-
-type:"風象星座｜希臘神話起源",
-
-img:"Aquarius.png",
-
-camera:"Aquarius.html",
-
-story:
-"形像是一個持著瓶子在斟酒的美少年蓋尼米德，據說他是特洛伊的王子。有一天，他替父親看羊時，宙斯在天空經過，一見蓋尼米德即對他迷戀，變身成一隻老鷹擄走蓋尼米德到奧林匹斯山，而蓋尼米德從此成為宙斯身旁的倒酒僮。"
-
-},
-
-pisces:{
-
-title:"雙魚座 Pisces（2/19～3/20）",
-
-type:"水象星座｜希臘神話起源",
-
-img:"Pisces.png",
-
-camera:"Pisces.html",
-
-story:
-"愛與美之神阿佛洛狄忒與兒子邱比特在河邊遊玩時，突然遭到可怕巨神提豐的襲擊。"
-
-},
-
-aries:{
-
-title:"牡羊座 Aries（3/21～4/19）",
-
-type:"火象星座｜希臘神話起源",
-
-img:"Aries.png",
-
-camera:"Aries.html",
-
-story:
-"從前，希臘國王亞達馬斯與雲精妮佩蕾生下王子普里克索斯和公主海倫。"
-
-}
-
-};
-
-/* ===== 取得網址參數 ===== */
-
-const params =
-new URLSearchParams(
-window.location.search
-);
-
-const id =
-params.get("id");
-
-const zodiac =
-zodiacData[id];
-
-/* ===== 顯示內容 ===== */
-
-document.getElementById(
-"zodiac-img"
-).src =
-zodiac.img;
-
-document.getElementById(
-"zodiac-title"
-).innerText =
-zodiac.title;
-
-document.getElementById(
-"zodiac-type"
-).innerText =
-zodiac.type;
-
-document.getElementById(
-"zodiac-story"
-).innerText =
-zodiac.story;
-
-/* ===== 朗讀 ===== */
+/* ===== 播放錄音 ===== */
 
 function playStory(){
 
-const speech =
-new SpeechSynthesisUtterance(
-zodiac.story
+const audio =
+document.getElementById(
+"audio-player"
 );
 
-speech.lang =
-"zh-TW";
+audio.pause();
 
-speech.rate = 0.9;
+audio.currentTime = 0;
 
-window.speechSynthesis.cancel();
-
-window.speechSynthesis.speak(
-speech
-);
+audio.play();
 
 }
 
@@ -274,7 +225,7 @@ window.location.href =
 function goAR(){
 
 window.location.href =
-zodiac.camera;
+"Aquarius.html";
 
 }
 
