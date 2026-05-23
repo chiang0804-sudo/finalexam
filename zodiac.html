@@ -1,309 +1,406 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
+
 <head>
 
+
 <meta charset="UTF-8">
+
 
 <meta name="viewport"
 content="width=device-width,
 initial-scale=1.0">
 
+
 <title>十二星座故事</title>
+
 
 <style>
 
-*{
-  box-sizing:border-box;
+
+/* ===== 動畫影片背景 ===== */
+
+
+#bg-video{
+
+
+  position:fixed;
+
+
+  top:0;
+  left:0;
+
+
+  width:100%;
+  height:100%;
+
+
+  object-fit:cover;
+
+
+  z-index:-1;
 }
 
-html,
+
+/* ===== body ===== */
+
+
 body{
+
+
   margin:0;
-  padding:0;
-  width:100%;
-  min-height:100%;
+
+
+  padding:20px;
+
+
   font-family:
   "Microsoft JhengHei",
   sans-serif;
 }
 
-/* ===== 背景影片 ===== */
-
-#bg-video{
-
-  position:fixed;
-
-  top:0;
-  left:0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  z-index:-1;
-}
-
-/* ===== body ===== */
-
-body{
-
-  padding:16px;
-}
 
 /* ===== 主標題 ===== */
 
+
 h1{
+
 
   text-align:center;
 
+
   color:white;
 
-  font-size:32px;
+
+  font-size:40px;
+
 
   text-shadow:
   0 0 15px black;
 
-  margin:10px 0 24px;
+
+  margin-bottom:25px;
 }
+
 
 /* ===== 四象標題 ===== */
 
+
 .element-title{
 
-  margin-top:28px;
 
-  margin-bottom:12px;
+  margin-top:35px;
 
-  font-size:24px;
+
+  margin-bottom:15px;
+
+
+  font-size:28px;
+
 
   font-weight:bold;
 
+
   text-shadow:
-  0 0 10px black;
+  0 0 10px white;
 }
 
+
 /* ===== 四象顏色 ===== */
+
 
 .air{
   color:#7dd3fc;
 }
 
+
 .earth{
   color:#c08457;
 }
+
 
 .fire{
   color:#ff7849;
 }
 
+
 .water{
   color:#60a5fa;
 }
 
+
 /* ===== 星座排列 ===== */
+
 
 .zodiac-grid{
 
+
   display:grid;
+
 
   grid-template-columns:
   repeat(2,1fr);
 
-  gap:14px;
+
+  gap:15px;
 }
+
 
 /* ===== 星座按鈕 ===== */
 
+
 .zodiac-btn{
 
+
   border:none;
+
 
   background:
   rgba(255,255,255,0.88);
 
+
   border-radius:22px;
 
-  padding:10px;
+
+  padding:12px;
+
 
   backdrop-filter:blur(6px);
 
+
   box-shadow:
-  0 0 18px
-  rgba(255,255,255,0.2);
+  0 0 20px
+  rgba(255,255,255,0.15);
 }
+
 
 /* ===== 星座圖片 ===== */
 
+
 .zodiac-btn img{
+
 
   width:100%;
 
-  aspect-ratio:1/1;
-
-  object-fit:cover;
 
   border-radius:16px;
 }
 
+
 /* ===== 中文 ===== */
+
 
 .zodiac-btn h3{
 
+
   margin:10px 0 0;
+
 
   color:#5b35c8;
 
-  font-size:19px;
+
+  font-size:20px;
 }
+
 
 /* ===== 英文 ===== */
 
+
 .zodiac-btn p{
 
-  margin:4px 0 0;
 
-  color:#555;
+  margin:5px 0 0;
 
-  font-size:15px;
+
+  color:#666;
+
+
+  font-size:16px;
 }
+
 
 /* ===== 故事頁 ===== */
 
+
 #story-page{
+
 
   display:none;
 }
 
+
 /* ===== 卡片 ===== */
+
 
 .card{
 
+
   background:
-  rgba(255,255,255,0.94);
+  rgba(255,255,255,0.92);
+
 
   border:4px solid #8b5cf6;
 
+
   border-radius:24px;
 
-  padding:20px;
+
+  padding:24px;
+
 
   backdrop-filter:blur(10px);
 
+
   box-shadow:
-  0 0 20px
-  rgba(139,92,246,0.4);
+  0 0 18px
+  rgba(139,92,246,0.35);
 }
+
 
 /* ===== 故事圖片 ===== */
 
+
 .card img{
+
 
   width:100%;
 
-  max-height:280px;
-
-  object-fit:cover;
 
   border-radius:18px;
 
-  margin-bottom:16px;
+
+  margin-bottom:18px;
 }
+
 
 /* ===== 標題 ===== */
 
+
 .card h2{
+
 
   text-align:center;
 
+
   color:#5b35c8;
-
-  font-size:26px;
-
-  margin:10px 0;
 }
+
 
 /* ===== 類型 ===== */
 
+
 .card h3{
 
-  color:#7c3aed;
 
-  font-size:20px;
+  color:#7c3aed;
 }
+
 
 /* ===== 內文 ===== */
 
+
 .card p{
 
-  font-size:19px;
+
+  font-size:20px;
+
 
   line-height:1.9;
+
 
   color:#222;
 }
 
+
 /* ===== 按鈕區 ===== */
+
 
 .buttons{
 
+
   display:flex;
+
 
   flex-direction:column;
 
+
   gap:12px;
+
 
   margin-top:20px;
 }
 
+
 /* ===== 按鈕 ===== */
+
 
 .action-btn{
 
+
   width:100%;
+
 
   padding:16px;
 
+
   border:none;
+
 
   border-radius:50px;
 
+
   font-size:20px;
+
 
   font-weight:bold;
 }
 
+
 /* ===== 按鈕顏色 ===== */
+
 
 .read-btn{
 
+
   background:#79a9ff;
+
 
   color:white;
 }
+
 
 .back-btn{
 
+
   background:#8b5cf6;
+
 
   color:white;
 }
+
 
 .ar-btn{
 
+
   background:#222;
+
 
   color:white;
 }
 
+
 </style>
+
 
 </head>
 
+
 <body>
 
-<!-- ===== 背景影片 ===== -->
+
+<!-- ===== 動畫影片背景 ===== -->
+
 
 <video
 id="bg-video"
@@ -312,265 +409,370 @@ muted
 loop
 playsinline>
 
+
 <source
 src="background.mp4"
 type="video/mp4">
 
+
 </video>
+
 
 <!-- ===== 首頁 ===== -->
 
+
 <div id="home-page">
+
 
 <h1>
 
+
 十二星座故事
+
 
 </h1>
 
+
 <!-- ===== 風象 ===== -->
 
+
 <div class="element-title air">
-
 風象星座
-
 </div>
 
+
 <div class="zodiac-grid">
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('aquarius')">
 
+
 <img src="Aquarius.png">
+
 
 <h3>水瓶座</h3>
 
+
 <p>Aquarius</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('gemini')">
 
+
 <img src="Gemini.png">
+
 
 <h3>雙子座</h3>
 
+
 <p>Gemini</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('libra')">
 
+
 <img src="Libra.png">
+
 
 <h3>天秤座</h3>
 
+
 <p>Libra</p>
+
 
 </button>
 
+
 </div>
+
 
 <!-- ===== 土象 ===== -->
 
+
 <div class="element-title earth">
-
 土象星座
-
 </div>
 
+
 <div class="zodiac-grid">
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('taurus')">
 
+
 <img src="Taurus.png">
+
 
 <h3>金牛座</h3>
 
+
 <p>Taurus</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('virgo')">
 
+
 <img src="Virgo.png">
+
 
 <h3>處女座</h3>
 
+
 <p>Virgo</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('capricorn')">
 
+
 <img src="Capricorn.png">
+
 
 <h3>摩羯座</h3>
 
+
 <p>Capricorn</p>
+
 
 </button>
 
+
 </div>
+
 
 <!-- ===== 火象 ===== -->
 
+
 <div class="element-title fire">
-
 火象星座
-
 </div>
 
+
 <div class="zodiac-grid">
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('aries')">
 
+
 <img src="Aries.png">
+
 
 <h3>牡羊座</h3>
 
+
 <p>Aries</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('leo')">
 
+
 <img src="Leo.png">
+
 
 <h3>獅子座</h3>
 
+
 <p>Leo</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('sagittarius')">
 
+
 <img src="Sagittarius.png">
+
 
 <h3>射手座</h3>
 
+
 <p>Sagittarius</p>
+
 
 </button>
 
+
 </div>
+
 
 <!-- ===== 水象 ===== -->
 
+
 <div class="element-title water">
-
 水象星座
-
 </div>
 
+
 <div class="zodiac-grid">
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('cancer')">
 
+
 <img src="Cancer.png">
+
 
 <h3>巨蟹座</h3>
 
+
 <p>Cancer</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('scorpio')">
 
+
 <img src="Scorpio.png">
+
 
 <h3>天蠍座</h3>
 
+
 <p>Scorpio</p>
 
+
 </button>
+
 
 <button
 class="zodiac-btn"
 onclick="showStory('pisces')">
 
+
 <img src="Pisces.png">
+
 
 <h3>雙魚座</h3>
 
+
 <p>Pisces</p>
+
 
 </button>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 <!-- ===== 故事頁 ===== -->
 
+
 <div id="story-page">
+
 
 <div class="card">
 
+
 <img id="story-img">
+
 
 <h2 id="story-title"></h2>
 
+
 <h3 id="story-type"></h3>
+
 
 <p id="story-text"></p>
 
+
 <div class="buttons">
+
 
 <button
 class="action-btn read-btn"
 onclick="playAudio()">
 
+
 朗讀故事
 
+
 </button>
+
 
 <button
 class="action-btn back-btn"
 onclick="backToHome()">
 
+
 返回12星座
 
+
 </button>
+
 
 <button
 class="action-btn ar-btn"
 onclick="backToAR()">
 
+
 返回AR相機
+
 
 </button>
 
-</div>
 
 </div>
 
+
 </div>
+
+
+</div>
+
+
+<!-- ===== 音檔播放器 ===== -->
+
 
 <audio id="audio-player"></audio>
 
+
 <script>
+
+
+/* ===== 星座資料 ===== */
+
 
 const zodiacData = {
 
@@ -603,7 +805,7 @@ title:"金牛座 Taurus（4/21～5/20）",
 type:"土象星座｜希臘神話起源",
 img:"Taurus.png",
 audio:"",
-text:"傳說，經希臘哈莫尼亞地方的貝納斯河，有位美麗的公主赫洛蓓,被宙斯看中，於是宙斯變成一頭雪花般潔白的公牛。由於公牛顯得非常乖巧而溫馴，於是公主就放心的爬到牛背上試騎，忽然間牛奔跑了起來，最後跳進愛琴海。公主緊抱著牛，海裡生物皆出來向宙斯行禮，公主終於知道牛是宙斯的化身，到了克里特島後，就和宙斯舉行婚禮，化身為牛的宙斯和赫洛蓓公主過著幸福的日子。"
+text:"傳說，經希臘哈莫尼亞地方的貝納斯河，有位美麗的公主赫洛蓓，被宙斯看中，於是宙斯變成一頭雪花般潔白的公牛。由於公牛顯得非常乖巧而溫馴，於是公主就放心的爬到牛背上試騎，忽然間牛奔跑了起來，最後跳進愛琴海。公主緊抱著牛，海裡生物皆出來向宙斯行禮，公主終於知道牛是宙斯的化身，到了克里特島後，就和宙斯舉行婚禮，化身為牛的宙斯和赫洛蓓公主過著幸福的日子。"
 },
 
 virgo:{
@@ -619,7 +821,7 @@ title:"摩羯座 Capricorn（12/23～1/22）",
 type:"土象星座｜希臘神話起源",
 img:"Capricorn.png",
 audio:"",
-text:"他管著宙斯的牛羊， 他們都叫他牧神潘恩。潘恩長得十分醜陋，幾乎可以用猙獰來形容。頭上生了兩支角，而下半身該是腳的部分卻是一支羊蹄。某天奧林帕斯山上正宴請諸神，大家正開懷暢飲時，突然群妖包圍，眾神只好變形逃生，牧神潘恩變成一隻羊身魚尾的摩羯，逃入尼羅河，摩羯座由此而來。"
+text:"他管著宙斯的牛羊，他們都叫他牧神潘恩。潘恩長得十分醜陋，幾乎可以用猙獰來形容。頭上生了兩支角，而下半身該是腳的部分卻是一支羊蹄。某天奧林帕斯山上正宴請諸神，大家正開懷暢飲時，突然群妖包圍，眾神只好變形逃生，牧神潘恩變成一隻羊身魚尾的摩羯，逃入尼羅河，摩羯座由此而來。"
 },
 
 aries:{
@@ -628,7 +830,6 @@ type:"火象星座｜希臘神話起源",
 img:"Aries.png",
 audio:"",
 text:"從前，希臘國王亞達馬斯與雲精妮佩蕾生下王子普里克索斯和公主海倫。後來新王后伊諾為了讓自己的孩子繼承王位，設計陷害普里克索斯，假傳神諭要將他獻祭給宙斯。妮佩蕾向宙斯求救後，宙斯派來擁有金色羊毛的神羊，救走兄妹倆逃離希臘。但途中海倫不慎掉入大海，只剩普里克索斯平安抵達科基斯。為了感謝宙斯，普里克索斯獻上神羊。後來宙斯便將這隻神羊升上天空，成為今天的牡羊座。"
-"
 },
 
 leo:{
@@ -636,8 +837,7 @@ title:"獅子座 Leo（7/23～8/22）",
 type:"火象星座｜希臘神話起源",
 img:"Leo.png",
 audio:"",
-text:"英雄赫丘力是宙斯的兒子，因為天后赫拉嫉妒他，多次設法陷害。長大後，赫丘力因被赫拉施法而誤殺妻兒，為了贖罪，他必須完成十二項危險任務。第一個任務，就是消滅尼米亞森林中的食人獅。這隻獅子刀箭不入，非常兇猛。赫丘力用弓箭攻擊無效後，只好赤手空拳與牠搏鬥，最後成功勒死食人獅。為了紀念赫丘力的勇氣，宙斯便將這隻獅子升上天空，成為今天的獅子座。
-"
+text:"英雄赫丘力是宙斯的兒子，因為天后赫拉嫉妒他，多次設法陷害。長大後，赫丘力因被赫拉施法而誤殺妻兒，為了贖罪，他必須完成十二項危險任務。第一個任務，就是消滅尼米亞森林中的食人獅。這隻獅子刀箭不入，非常兇猛。赫丘力用弓箭攻擊無效後，只好赤手空拳與牠搏鬥，最後成功勒死食人獅。為了紀念赫丘力的勇氣，宙斯便將這隻獅子升上天空，成為今天的獅子座。"
 },
 
 sagittarius:{
@@ -653,7 +853,7 @@ title:"巨蟹座 Cancer（6/22～7/22）",
 type:"水象星座｜希臘神話起源",
 img:"Cancer.png",
 audio:"",
-text:"英雄赫拉克勒斯是宙斯的兒子，因為天后赫拉的嫉妒，多次遭到陷害。長大後，赫拉克勒斯因被赫拉施法而失去理智，親手害死自己的妻兒。為了贖罪，他必須完成十二項危險的任務。第二個任務，就是消滅擁有九顆頭的蛇妖Hydra。這隻怪物不但擁有劇毒，被砍掉的頭還會重新長出，而且一次變得更多。赫拉克勒斯原本無法對付牠，後來他想到用火焰燒灼傷口，才成功阻止蛇頭再生，最後打敗了九頭蛇。戰鬥途中，一隻巨大的螃蟹突然出現，用巨大的鉗子夾住赫拉克勒斯的腳，想幫助九頭蛇攻擊他，但最後被赫拉克勒斯一腳踩死。 天后赫拉事後並沒有忘記這些為了她的嫉妒心獻出生命的生物們，將它們都升到了天上，化成了星座，而那隻跑來助拳的大螃蟹，就是巨蟹座。"
+text:"英雄赫拉克勒斯是宙斯的兒子，因為天后赫拉的嫉妒，多次遭到陷害。長大後，赫拉克勒斯因被赫拉施法而失去理智，親手害死自己的妻兒。為了贖罪，他必須完成十二項危險的任務。第二個任務，就是消滅擁有九顆頭的蛇妖Hydra。這隻怪物不但擁有劇毒，被砍掉的頭還會重新長出，而且一次變得更多。赫拉克勒斯原本無法對付牠，後來他想到用火焰燒灼傷口，才成功阻止蛇頭再生，最後打敗了九頭蛇。"
 },
 
 scorpio:{
@@ -661,7 +861,7 @@ title:"天蠍座 Scorpio（10/24~11/22）",
 type:"水象星座｜希臘神話起源",
 img:"Scorpio.png",
 audio:"",
-text:"傳說中，巨人獵人俄里翁（Orion）擁有無與倫比的狩獵技巧與英俊外貌，但他卻因為過度自大，誇口說「天下沒有任何動物能擊敗我」。這番狂妄的言論引起了天神的不滿。 為了懲罰他的傲慢，天后希拉派出一隻巨大的毒蠍去刺殺俄里翁。這隻巨蠍悄悄潛伏，並用帶有劇毒的尾刺給予獵人致命一擊。為了表彰巨蠍的功績，大地女神將牠升上夜空成為天蠍座。而死去的俄里翁則化為獵戶座。從此，這兩大星座在天空中成為永恆的宿敵，只要天蠍座從東方升起，獵戶座就會從西方躲藏，兩人永遠無法在夜空中相見。"
+text:"傳說中，巨人獵人俄里翁（Orion）擁有無與倫比的狩獵技巧與英俊外貌，但他卻因為過度自大，誇口說天下沒有任何動物能擊敗我。這番狂妄的言論引起了天神的不滿。為了懲罰他的傲慢，天后希拉派出一隻巨大的毒蠍去刺殺俄里翁。"
 },
 
 pisces:{
@@ -669,98 +869,154 @@ title:"雙魚座 Pisces（2/19～3/20）",
 type:"水象星座｜希臘神話起源",
 img:"Pisces.png",
 audio:"",
-text:"愛與美之神阿佛洛狄忒與兒子邱比特在河邊遊玩時，突然遭到可怕巨神提豐的襲擊。為了躲避危險，阿佛洛狄忒立刻跳入河中化身成魚逃跑，但她很快發現邱比特沒有跟上，於是又急忙回去尋找兒子。找到邱比特後，為了避免兩人再次失散，阿佛洛狄忒便用繩子將彼此綁在一起，接著一起化成兩條魚潛入河中逃離危險。後來，宙斯為了紀念這段母子互相守護的故事，便將牠們升上天空，成為今天的雙魚座。"
+text:"愛與美之神阿佛洛狄忒與兒子邱比特在河邊遊玩時，突然遭到可怕巨神提豐的襲擊。為了躲避危險，阿佛洛狄忒立刻跳入河中化身成魚逃跑，但她很快發現邱比特沒有跟上。"
 }
 
 };
 
+
+/* ===== 目前音檔 ===== */
+
+
 let currentAudio = "";
+
+
+/* ===== 顯示故事 ===== */
+
 
 function showStory(id){
 
-const zodiac = zodiacData[id];
 
-currentAudio = zodiac.audio;
+const zodiac =
+zodiacData[id];
+
+
+currentAudio =
+zodiac.audio;
+
 
 document.getElementById(
 "home-page"
 ).style.display = "none";
 
+
 document.getElementById(
 "story-page"
 ).style.display = "block";
+
 
 document.getElementById(
 "story-img"
-).src = zodiac.img;
+).src =
+zodiac.img;
+
 
 document.getElementById(
 "story-title"
-).innerText = zodiac.title;
+).innerText =
+zodiac.title;
+
 
 document.getElementById(
 "story-type"
-).innerText = zodiac.type;
+).innerText =
+zodiac.type;
+
 
 document.getElementById(
 "story-text"
-).innerText = zodiac.text;
+).innerText =
+zodiac.text;
+
 
 window.scrollTo(0,0);
 
+
 }
+
+
+/* ===== 播放錄音 ===== */
+
 
 function playAudio(){
 
+
 const audio =
 document.getElementById(
 "audio-player"
 );
 
+
 audio.pause();
 
+
 audio.currentTime = 0;
+
 
 if(currentAudio){
 
-audio.src = currentAudio;
+
+audio.src =
+currentAudio;
+
 
 audio.play();
 
-}
 
 }
+
+
+}
+
+
+/* ===== 返回首頁 ===== */
+
 
 function backToHome(){
+
 
 const audio =
 document.getElementById(
 "audio-player"
 );
 
+
 audio.pause();
 
+
 audio.currentTime = 0;
+
 
 document.getElementById(
 "story-page"
 ).style.display = "none";
 
+
 document.getElementById(
 "home-page"
 ).style.display = "block";
 
+
 }
 
+
+/* ===== 返回AR ===== */
+
+
 function backToAR(){
+
 
 window.location.href =
 "index.html";
 
+
 }
+
 
 </script>
 
+
 </body>
+
 
 </html>
