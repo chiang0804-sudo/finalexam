@@ -9,8 +9,7 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-黃道十二宮
-AR展示學習
+黃道十二宮 AR展示學習
 </title>
 
 <style>
@@ -31,6 +30,8 @@ body{
   font-family:
   "Microsoft JhengHei",
   sans-serif;
+
+  overflow-x:hidden;
 }
 
 /* ===== 背景影片 ===== */
@@ -65,16 +66,20 @@ body{
 
   color:white;
 
-  font-size:48px;
+  font-size:52px;
 
   font-weight:bold;
 
-  margin:20px 0 40px;
+  line-height:1.5;
+
+  margin:25px 0 45px;
 
   text-shadow:
     0 0 10px #fff,
     0 0 25px #8b5cf6,
     0 0 45px #60a5fa;
+
+  letter-spacing:4px;
 }
 
 /* ===== 星座排列 ===== */
@@ -108,14 +113,24 @@ body{
 
   backdrop-filter:blur(8px);
 
+  box-shadow:
+  0 0 20px
+  rgba(255,255,255,0.18);
+
   cursor:pointer;
 
   transition:0.3s;
 }
 
+/* ===== 滑鼠效果 ===== */
+
 .zodiac-btn:hover{
 
   transform:scale(1.05);
+
+  box-shadow:
+  0 0 30px
+  rgba(255,255,255,0.35);
 }
 
 /* ===== 星座圖片 ===== */
@@ -129,6 +144,8 @@ body{
   object-fit:cover;
 
   border-radius:18px;
+
+  display:block;
 }
 
 /* ===== 手機版 ===== */
@@ -140,7 +157,10 @@ body{
   }
 
   .main-title{
-    font-size:32px;
+
+    font-size:34px;
+
+    margin-bottom:30px;
   }
 
   .zodiac-grid{
@@ -177,7 +197,8 @@ type="video/mp4">
 
 <h1 class="main-title">
 
-黃道十二宮 AR展示學習
+黃道十二宮<br>
+AR展示學習
 
 </h1>
 
