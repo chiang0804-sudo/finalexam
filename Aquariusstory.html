@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+水瓶座故事
+
+</title>
+
+<style>
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+
+  background:#0f172a;
+
+  color:white;
+}
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* ===== 圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:20px;
+}
+
+/* ===== 標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  font-size:36px;
+}
+
+/* ===== 內文 ===== */
+
+.story{
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+button{
+
+  border:none;
+
+  border-radius:50px;
+
+  padding:16px;
+
+  font-size:20px;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Aquarius.png">
+
+<h1>
+
+水瓶座 Aquarius
+（1/20~2/18）
+
+</h1>
+
+<div class="story">
+
+風象星座｜希臘神話起源<br><br>
+
+特洛伊王子蓋尼米德是一位容貌俊美的少年，平時負責在草原上牧羊。有一天，眾神之王宙斯從天空經過時，看見了蓋尼米德，立刻被他的美貌深深吸引。於是，宙斯化身成一隻巨大的老鷹，將蓋尼米德帶回奧林帕斯山。
+來到天界後，蓋尼米德被安排成為眾神宴會中的侍者，專門替眾神斟酒。宙斯非常喜愛他，經常將他留在自己身邊，也因此引起了天后赫拉的不滿與嫉妒。
+宙斯擔心蓋尼米德遭到赫拉傷害，但又捨不得讓他離開天界，最後便讓他永遠留在天空之中，手持水瓶替眾神倒水。後來，宙斯將蓋尼米德的形象升上夜空，成為今天的水瓶座。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Aquarius.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/home519/test10.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

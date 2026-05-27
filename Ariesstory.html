@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+牡羊座故事
+
+</title>
+
+<style>
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+
+  background:#0f172a;
+
+  color:white;
+}
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* ===== 圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:20px;
+}
+
+/* ===== 標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  font-size:36px;
+}
+
+/* ===== 內文 ===== */
+
+.story{
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+button{
+
+  border:none;
+
+  border-radius:50px;
+
+  padding:16px;
+
+  font-size:20px;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Aries.png">
+
+<h1>
+
+牡羊座 Aries
+（3/21～4/19）
+
+</h1>
+
+<div class="story">
+
+火象星座｜希臘神話起源<br><br>
+
+從前，希臘國王阿塔瑪斯與雲朵女神涅斐勒生下兩個孩子，分別是王子佛里克索斯和公主赫勒。後來新王后伊諾為了讓自己的孩子繼承王位，設計陷害佛里克索斯，假傳神諭要將他獻祭給宙斯。
+涅斐勒向宙斯求救後，宙斯派來擁有金色羊毛的神羊，幫助兄妹倆逃離希臘，但途中赫勒不慎掉入大海，只有佛里克索斯平安抵達科基斯。
+為了感謝宙斯，佛里克索斯獻上神羊。後來宙斯便將這隻神羊升上天空，成為今天的牡羊座。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Aries.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/final/Aries.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+處女座故事
+
+</title>
+
+<style>
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+
+  background:#0f172a;
+
+  color:white;
+}
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* ===== 圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:20px;
+}
+
+/* ===== 標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  font-size:36px;
+}
+
+/* ===== 內文 ===== */
+
+.story{
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+button{
+
+  border:none;
+
+  border-radius:50px;
+
+  padding:16px;
+
+  font-size:20px;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Virgo.png">
+
+<h1>
+
+處女座 Virgo
+（8/23—9/22）
+
+
+</h1>
+
+<div class="story">
+
+土象星座｜希臘神話起源<br><br>
+
+大地女神狄蜜特掌管農業與豐收，她非常疼愛自己的女兒普西芬妮。普西芬妮不但美麗善良，也深受眾神喜愛，但狄蜜特不希望女兒離開自己，因此總是小心保護著她。
+有一天，冥王黑帝斯在地底看見了正在花園中採花的普西芬妮，立刻對她一見鍾情。後來，黑帝斯趁著普西芬妮獨自玩耍時，駕著馬車從大地裂縫中衝出，將她帶回冥界。狄蜜特發現女兒失蹤後，非常悲傷，四處尋找卻始終找不到她。
+因為失去女兒，狄蜜特悲痛到無心照顧大地，導致植物枯萎、農作物無法生長，世界陷入飢荒。最後，宙斯只好出面協調，答應讓普西芬妮回到母親身邊。
+但由於普西芬妮在冥界吃下了象徵冥界的石榴，因此她每年仍必須有一段時間回到冥界陪伴黑帝斯。當普西芬妮回到地面時，大地恢復生機；而當她回到冥界時，狄蜜特便因思念女兒而讓萬物凋零，因此形成了四季的變化。後來，宙斯將普西芬妮的形象升上天空，成為今天的處女座。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Virgo.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/final/Virgo.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

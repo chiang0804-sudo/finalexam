@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+雙子座故事
+
+</title>
+
+<style>
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+
+  background:#0f172a;
+
+  color:white;
+}
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* ===== 圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:20px;
+}
+
+/* ===== 標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  font-size:36px;
+}
+
+/* ===== 內文 ===== */
+
+.story{
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+button{
+
+  border:none;
+
+  border-radius:50px;
+
+  padding:16px;
+
+  font-size:20px;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Gemini.png">
+
+<h1>
+
+雙子座 Gemini 
+（5/21~6/21）
+
+</h1>
+
+<div class="story">
+
+風象星座｜希臘神話起源<br><br>
+
+天神宙斯與斯巴達王后勒達生下了一對雙胞胎兄弟，分別是卡斯托爾與波魯克斯。哥哥卡斯托爾是凡人，擅長馬術與劍術；弟弟波魯克斯則擁有宙斯的神族血統，因此具有不死之身。兄弟倆從小感情深厚，一同經歷了許多冒險與戰鬥。
+後來，在一次戰鬥中，卡斯托爾不幸戰死。波魯克斯因失去哥哥而悲痛不已，甚至向宙斯請求，願意放棄自己永生的力量，只希望能再次與哥哥團聚。宙斯被這份深厚的兄弟情誼所感動，於是讓兩人共享生命，永遠不再分離。
+最後，宙斯將兄弟倆升上天空，化為今天的雙子座，而夜空中彼此相鄰的兩顆亮星，也象徵著這對感情深厚的兄弟。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Gemini.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/final/Gemini.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

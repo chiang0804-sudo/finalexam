@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+天秤座故事
+
+</title>
+
+<style>
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  font-family:
+  "Microsoft JhengHei",
+  sans-serif;
+
+  background:#0f172a;
+
+  color:white;
+}
+
+/* ===== 背景 ===== */
+
+body{
+
+  padding:20px;
+}
+
+/* ===== 卡片 ===== */
+
+.card{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* ===== 圖片 ===== */
+
+.card img{
+
+  width:100%;
+
+  border-radius:20px;
+}
+
+/* ===== 標題 ===== */
+
+h1{
+
+  text-align:center;
+
+  font-size:36px;
+}
+
+/* ===== 內文 ===== */
+
+.story{
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-top:20px;
+}
+
+/* ===== 按鈕 ===== */
+
+.buttons{
+
+  margin-top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+}
+
+button{
+
+  border:none;
+
+  border-radius:50px;
+
+  padding:16px;
+
+  font-size:20px;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Libra.png">
+
+<h1>
+
+天秤座 Libra 
+（9/23~10/22）
+
+</h1>
+
+<div class="story">
+
+風象星座｜希臘神話起源<br><br>
+
+正義女神阿斯特莉亞在為人類所做善惡裁判時所用的天平，一隻手持天平，一隻手握斬除邪惡的劍，為求公正，所以眼睛皆矇著。
+從前的眾神和人類是和平共處於大地上，人的壽命有限，所以寂寞的神不斷創造人類，然而那時的人好爭鬥、惡業橫行，眾神在對人類失望之餘回到天上，只有阿斯特莉亞女神捨不得回去而留在世界上，教人為善。
+儘管如此，人類仍繼續墮落，於是戰爭掀起，開始了打打殺殺，最後連阿斯特莉亞也放棄人類而回到天上。
+當她飛回天界後，宙斯將她隨身攜帶的那座黃金天秤往天上一拋，成為了今天的「天秤座」，作為警示凡人要保持公正、平衡的象徵。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Libra.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/final/Libra.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
