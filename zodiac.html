@@ -34,9 +34,7 @@ body{
   sans-serif;
 }
 
-/* =========================
-   背景影片
-========================= */
+/* ===== 背景影片 ===== */
 
 #bg-video{
 
@@ -50,107 +48,17 @@ body{
 
   object-fit:cover;
 
-  z-index:-2;
+  z-index:-1;
 }
 
-/* =========================
-   頁面
-========================= */
+/* ===== 頁面 ===== */
 
 body{
 
   padding:25px;
 }
 
-/* =========================
-   星球
-========================= */
-
-.planet{
-
-  position:fixed;
-
-  z-index:-1;
-
-  pointer-events:none;
-
-  animation:
-  float 6s ease-in-out infinite;
-}
-
-/* 地球 */
-
-.earth{
-
-  width:180px;
-
-  top:60px;
-  left:30px;
-}
-
-/* 月亮 */
-
-.moon{
-
-  width:120px;
-
-  top:260px;
-  right:50px;
-}
-
-/* 土星 */
-
-.saturn{
-
-  width:260px;
-
-  bottom:20px;
-  left:30px;
-}
-
-/* 木星 */
-
-.jupiter{
-
-  width:180px;
-
-  top:70px;
-  right:200px;
-}
-
-/* 海王星 */
-
-.neptune{
-
-  width:150px;
-
-  bottom:120px;
-  right:40px;
-}
-
-/* 漂浮 */
-
-@keyframes float{
-
-  0%{
-    transform:
-    translateY(0px);
-  }
-
-  50%{
-    transform:
-    translateY(-15px);
-  }
-
-  100%{
-    transform:
-    translateY(0px);
-  }
-}
-
-/* =========================
-   標題
-========================= */
+/* ===== 標題 ===== */
 
 .main-title{
 
@@ -162,7 +70,7 @@ body{
 
   font-weight:bold;
 
-  line-height:1.5;
+  line-height:1.4;
 
   margin:20px 0 40px;
 
@@ -174,14 +82,14 @@ body{
     0 0 40px #60a5fa;
 }
 
+/* ===== 強制換行 ===== */
+
 .main-title span{
 
   display:block;
 }
 
-/* =========================
-   星座排列
-========================= */
+/* ===== 星座排列 ===== */
 
 .zodiac-grid{
 
@@ -197,9 +105,7 @@ body{
   margin:auto;
 }
 
-/* =========================
-   圖片按鈕
-========================= */
+/* ===== 圖片按鈕 ===== */
 
 .zodiac-btn{
 
@@ -212,9 +118,7 @@ body{
   cursor:pointer;
 }
 
-/* =========================
-   星座圖片
-========================= */
+/* ===== 圖片 ===== */
 
 .zodiac-btn img{
 
@@ -227,14 +131,14 @@ body{
   transition:0.3s;
 }
 
+/* ===== 圖片動畫 ===== */
+
 .zodiac-btn img:hover{
 
   transform:scale(1.05);
 }
 
-/* =========================
-   資料來源
-========================= */
+/* ===== 來源 ===== */
 
 .source{
 
@@ -242,34 +146,41 @@ body{
 
   color:white;
 
-  font-size:15px;
-
   margin-top:40px;
 
-  line-height:1.8;
+  font-size:16px;
+
+  line-height:2;
 
   text-shadow:
-  0 0 10px black;
+  0 0 8px black;
 }
 
 .source a{
 
   color:#93c5fd;
+
+  text-decoration:none;
 }
 
-/* =========================
-   手機版
-========================= */
+.source a:hover{
+
+  text-decoration:underline;
+}
+
+/* ===== 手機版 ===== */
 
 @media(max-width:768px){
 
   body{
-    padding:15px;
+    padding:16px;
   }
 
   .main-title{
 
     font-size:34px;
+
+    margin-bottom:28px;
   }
 
   .zodiac-grid{
@@ -277,27 +188,12 @@ body{
     grid-template-columns:
     repeat(2,1fr);
 
-    gap:15px;
+    gap:16px;
   }
 
-  .earth{
-    width:110px;
-  }
+  .source{
 
-  .moon{
-    width:80px;
-  }
-
-  .saturn{
-    width:160px;
-  }
-
-  .jupiter{
-    width:120px;
-  }
-
-  .neptune{
-    width:100px;
+    font-size:14px;
   }
 }
 
@@ -307,9 +203,7 @@ body{
 
 <body>
 
-<!-- =========================
-     背景影片
-========================= -->
+<!-- ===== 背景影片 ===== -->
 
 <video
 id="bg-video"
@@ -324,33 +218,7 @@ type="video/mp4">
 
 </video>
 
-<!-- =========================
-     星球 PNG
-========================= -->
-
-<img
-src="Earth.png"
-class="planet earth">
-
-<img
-src="Moon.png"
-class="planet moon">
-
-<img
-src="Saturn.png"
-class="planet saturn">
-
-<img
-src="Jupiter.png"
-class="planet jupiter">
-
-<img
-src="Neptune.png"
-class="planet neptune">
-
-<!-- =========================
-     標題
-========================= -->
+<!-- ===== 標題 ===== -->
 
 <h1 class="main-title">
 
@@ -360,96 +228,156 @@ class="planet neptune">
 
 </h1>
 
-<!-- =========================
-     十二星座
-========================= -->
+<!-- ===== 星座圖片 ===== -->
 
 <div class="zodiac-grid">
 
-<button class="zodiac-btn"
-onclick="location.href='Aries.html'">
+<!-- 牡羊座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Aries.html'">
+
 <img src="Aries.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Taurus.html'">
+<!-- 金牛座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Taurus.html'">
+
 <img src="Taurus.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Gemini.html'">
+<!-- 雙子座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Gemini.html'">
+
 <img src="Gemini.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Cancer.html'">
+<!-- 巨蟹座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Cancer.html'">
+
 <img src="Cancer.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Leo.html'">
+<!-- 獅子座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Leo.html'">
+
 <img src="Leo.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Virgo.html'">
+<!-- 處女座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Virgo.html'">
+
 <img src="Virgo.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Libra.html'">
+<!-- 天秤座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Libra.html'">
+
 <img src="Libra.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Scorpio.html'">
+<!-- 天蠍座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Scorpio.html'">
+
 <img src="Scorpio.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Sagittarius.html'">
+<!-- 射手座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Sagittarius.html'">
+
 <img src="Sagittarius.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Capricorn.html'">
+<!-- 摩羯座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Capricorn.html'">
+
 <img src="Capricorn.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Aquarius.html'">
+<!-- 水瓶座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Aquarius.html'">
+
 <img src="Aquarius.png">
+
 </button>
 
-<button class="zodiac-btn"
-onclick="location.href='Pisces.html'">
+<!-- 雙魚座 -->
+
+<button
+class="zodiac-btn"
+onclick="window.location.href='https://yii-stu.github.io/final/Pisces.html'">
+
 <img src="Pisces.png">
+
 </button>
 
 </div>
 
-<!-- =========================
-     資料來源
-========================= -->
+<!-- ===== 來源 ===== -->
 
 <div class="source">
 
 背景影片來源：
-
 <br>
 
-<a href="https://www.pexels.com/zh-tw/video/12336965/" target="_blank">
-Pexels
+<a href="https://www.pexels.com/zh-tw/video/12336965/"
+target="_blank">
+
+https://www.pexels.com/zh-tw/video/12336965/
+
 </a>
 
 <br><br>
 
-圖示素材來源：
-
+按鈕圖片來源：
 <br>
 
-<a href="https://www.flaticon.com/" target="_blank">
-Flaticon
+<a href="https://www.flaticon.com/free-icons/button/2"
+target="_blank">
+
+https://www.flaticon.com/free-icons/button/2
+
 </a>
 
 </div>
