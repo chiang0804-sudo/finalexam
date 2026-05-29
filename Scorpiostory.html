@@ -26,7 +26,7 @@ body{
   "Microsoft JhengHei",
   sans-serif;
 
-  background:#0f172a;
+  background:#142344;
 
   color:white;
 }
@@ -47,7 +47,7 @@ body{
   margin:auto;
 
   background:
-  rgba(255,255,255,0.1);
+  rgb(67, 106, 169);
 
   border-radius:25px;
 
@@ -114,6 +114,135 @@ button{
 }
 
 .read-btn{
+
+  background:#60a5fa;
+}
+
+.home-btn{
+
+  background:#8b5cf6;
+}
+
+.ar-btn{
+
+  background:#222;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="Scorpio.png">
+
+<h1>
+
+天蠍座Scorpio
+（10/24~11/22）
+
+
+</h1>
+
+<div class="story">
+
+水象星座｜希臘神話起源<br><br>
+
+傳說中，巨人獵人俄里翁擁有無與倫比的狩獵技巧與英俊外貌，但他卻因為過度自大，誇口說「天下沒有任何動物能擊敗我」。
+這番狂妄的言論引起了天神的不滿。 
+為了懲罰他的傲慢，天后赫拉派出一隻巨大的毒蠍去刺殺俄里翁。這隻巨蠍悄悄潛伏，並用帶有劇毒的尾刺給予獵人致命一擊。
+他倒地的同時也壓死了這隻毒蝎子。於是獵人與蝎子同歸於盡，雙雙一命嗚呼了。 
+天神宙斯憐惜俄里翁 與蝎子的命運，讓他們升上了天，成為了今天的獵戶座與天蝎座。
+從此，這兩大星座在天空中成為永恆的宿敵，只要天蠍座從東方升起，獵戶座就會從西方躲藏，兩人永遠無法在夜空中相見。
+
+
+
+</div>
+
+<div class="buttons">
+
+<button
+class="read-btn"
+onclick="playStory()">
+
+朗讀故事
+
+</button>
+
+<button
+class="home-btn"
+onclick="backHome()">
+
+返回12星座
+
+</button>
+
+<button
+class="ar-btn"
+onclick="goAR()">
+
+返回AR相機
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===== 音檔 ===== -->
+
+<audio id="audio-player">
+
+<source
+src="Scorpio.m4a"
+type="audio/mp4">
+
+</audio>
+
+<script>
+
+/* ===== 播放錄音 ===== */
+
+function playStory(){
+
+const audio =
+document.getElementById(
+"audio-player"
+);
+
+audio.pause();
+
+audio.currentTime = 0;
+
+audio.play();
+
+}
+
+/* ===== 返回首頁 ===== */
+
+function backHome(){
+
+window.location.href =
+"zodiac.html";
+
+}
+
+/* ===== 返回AR ===== */
+
+function goAR(){
+
+window.location.href =
+"https://yii-stu.github.io/final/Scorpio.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
 
   background:#60a5fa;
 }
